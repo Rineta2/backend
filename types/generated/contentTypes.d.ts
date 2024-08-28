@@ -384,6 +384,9 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     slider: Attribute.Media<'images', true> & Attribute.Required;
     skug: Attribute.String & Attribute.Required;
     author: Attribute.Media<'images'> & Attribute.Required;
+    titleDetails: Attribute.String & Attribute.Required;
+    price: Attribute.JSON;
+    titlePrice: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

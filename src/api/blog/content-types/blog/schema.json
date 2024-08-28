@@ -59,12 +59,22 @@
       "required": true
     },
     "author": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "titleDetails": {
+      "type": "string",
       "required": true
+    },
+    "price": {
+      "type": "json"
+    },
+    "titlePrice": {
+      "type": "string"
     }
   }
 }
