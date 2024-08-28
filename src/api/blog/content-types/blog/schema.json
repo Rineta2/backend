@@ -17,12 +17,12 @@
       "required": true
     },
     "thumbnail": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "desc": {
       "type": "text",
@@ -47,11 +47,23 @@
       "required": true
     },
     "slider": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "skug": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": true
     }
   }
