@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,44 @@
   "attributes": {
     "title": {
       "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "game",
+        "berita",
+        "laptop",
+        "handphone"
+      ],
+      "required": true
+    },
+    "tanggal": {
+      "required": true,
+      "type": "date"
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "slider": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
       "required": true
     }
   }

@@ -368,6 +368,36 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    thumbnail: Attribute.Media<'images'> & Attribute.Required;
+    desc: Attribute.Text & Attribute.Required;
+    category: Attribute.Enumeration<['game', 'berita', 'laptop', 'handphone']> &
+      Attribute.Required;
+    tanggal: Attribute.Date & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
+    slider: Attribute.Media<'images', true> & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortofolioPortofolio extends Schema.CollectionType {
+  collectionName: 'portofolios';
+  info: {
+    singularName: 'portofolio';
+    pluralName: 'portofolios';
+    displayName: 'portofolio';
   };
   options: {
     draftAndPublish: true;
@@ -377,9 +407,17 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+    createdBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+    updatedBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -821,6 +859,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::blog.blog': ApiBlogBlog;
+      'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
