@@ -58,7 +58,7 @@
       "type": "string",
       "required": true
     },
-    "author": {
+    "avatar": {
       "type": "media",
       "multiple": false,
       "required": true,

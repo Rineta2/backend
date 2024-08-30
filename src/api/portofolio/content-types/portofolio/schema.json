@@ -4,7 +4,8 @@
   "info": {
     "singularName": "portofolio",
     "pluralName": "portofolios",
-    "displayName": "portofolio"
+    "displayName": "portofolio",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,6 +13,47 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "bisnis",
+        "education",
+        "wedding"
+      ],
+      "required": true
+    },
+    "tanggal": {
+      "type": "date",
+      "required": true
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "slider": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "icons": {
+      "type": "json",
+      "required": true
+    },
+    "link": {
       "type": "string",
       "required": true
     }
