@@ -362,6 +362,81 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    thumbnail: Attribute.Media<'images'> & Attribute.Required;
+    desc: Attribute.Text & Attribute.Required;
+    category: Attribute.Enumeration<['game', 'berita', 'laptop', 'handphone']> &
+      Attribute.Required;
+    tanggal: Attribute.Date & Attribute.Required;
+    content: Attribute.Blocks & Attribute.Required;
+    slider: Attribute.Media<'images', true> & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
+    avatar: Attribute.Media<'images'> & Attribute.Required;
+    titleDetails: Attribute.String & Attribute.Required;
+    price: Attribute.JSON;
+    titlePrice: Attribute.String;
+    nama: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPortofolioPortofolio extends Schema.CollectionType {
+  collectionName: 'portofolios';
+  info: {
+    singularName: 'portofolio';
+    pluralName: 'portofolios';
+    displayName: 'portofolio';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    desc: Attribute.Text & Attribute.Required;
+    category: Attribute.Enumeration<['bisnis', 'education', 'wedding']> &
+      Attribute.Required;
+    tanggal: Attribute.Date & Attribute.Required;
+    thumbnail: Attribute.Media<'images'> & Attribute.Required;
+    slider: Attribute.Media<'images', true> & Attribute.Required;
+    icons: Attribute.JSON & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::portofolio.portofolio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -788,80 +863,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiBlogBlog extends Schema.CollectionType {
-  collectionName: 'blogs';
-  info: {
-    singularName: 'blog';
-    pluralName: 'blogs';
-    displayName: 'blog';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    thumbnail: Attribute.Media<'images'> & Attribute.Required;
-    desc: Attribute.Text & Attribute.Required;
-    category: Attribute.Enumeration<['game', 'berita', 'laptop', 'handphone']> &
-      Attribute.Required;
-    tanggal: Attribute.Date & Attribute.Required;
-    content: Attribute.Blocks & Attribute.Required;
-    slider: Attribute.Media<'images', true> & Attribute.Required;
-    slug: Attribute.String & Attribute.Required;
-    avatar: Attribute.Media<'images'> & Attribute.Required;
-    titleDetails: Attribute.String & Attribute.Required;
-    price: Attribute.JSON;
-    titlePrice: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiPortofolioPortofolio extends Schema.CollectionType {
-  collectionName: 'portofolios';
-  info: {
-    singularName: 'portofolio';
-    pluralName: 'portofolios';
-    displayName: 'portofolio';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    desc: Attribute.Text & Attribute.Required;
-    category: Attribute.Enumeration<['bisnis', 'education', 'wedding']> &
-      Attribute.Required;
-    tanggal: Attribute.Date & Attribute.Required;
-    thumbnail: Attribute.Media<'images'> & Attribute.Required;
-    slider: Attribute.Media<'images', true> & Attribute.Required;
-    icons: Attribute.JSON & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::portofolio.portofolio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::portofolio.portofolio',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -872,6 +873,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'api::blog.blog': ApiBlogBlog;
+      'api::portofolio.portofolio': ApiPortofolioPortofolio;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -880,8 +883,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::blog.blog': ApiBlogBlog;
-      'api::portofolio.portofolio': ApiPortofolioPortofolio;
     }
   }
 }

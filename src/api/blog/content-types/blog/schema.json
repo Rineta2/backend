@@ -75,6 +75,9 @@
     },
     "titlePrice": {
       "type": "string"
+    },
+    "nama": {
+      "type": "string"
     }
   }
 }
