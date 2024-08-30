@@ -54,7 +54,7 @@
         "images"
       ]
     },
-    "skug": {
+    "slug": {
       "type": "string",
       "required": true
     },

@@ -382,7 +382,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     tanggal: Attribute.Date & Attribute.Required;
     content: Attribute.Blocks & Attribute.Required;
     slider: Attribute.Media<'images', true> & Attribute.Required;
-    skug: Attribute.String & Attribute.Required;
+    slug: Attribute.String & Attribute.Required;
     author: Attribute.Media<'images'> & Attribute.Required;
     titleDetails: Attribute.String & Attribute.Required;
     price: Attribute.JSON;
