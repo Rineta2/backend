@@ -416,7 +416,6 @@ export interface ApiPortofolioPortofolio extends Schema.CollectionType {
       Attribute.Required;
     tanggal: Attribute.Date & Attribute.Required;
     thumbnail: Attribute.Media<'images'> & Attribute.Required;
-    slider: Attribute.Media<'images', true> & Attribute.Required;
     icons: Attribute.JSON & Attribute.Required;
     link: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
