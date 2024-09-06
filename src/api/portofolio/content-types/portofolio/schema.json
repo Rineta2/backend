@@ -16,10 +16,6 @@
       "type": "string",
       "required": true
     },
-    "desc": {
-      "type": "text",
-      "required": true
-    },
     "category": {
       "type": "enumeration",
       "enum": [

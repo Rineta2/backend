@@ -32,7 +32,8 @@
       "type": "enumeration",
       "enum": [
         "game",
-        "berita",
+        "pendidikan",
+        "framework",
         "laptop",
         "handphone"
       ],
@@ -45,14 +46,6 @@
     "content": {
       "type": "blocks",
       "required": true
-    },
-    "slider": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "slug": {
       "type": "string",

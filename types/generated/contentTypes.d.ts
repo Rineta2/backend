@@ -377,11 +377,12 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     title: Attribute.String & Attribute.Required;
     thumbnail: Attribute.Media<'images'> & Attribute.Required;
     desc: Attribute.Text & Attribute.Required;
-    category: Attribute.Enumeration<['game', 'berita', 'laptop', 'handphone']> &
+    category: Attribute.Enumeration<
+      ['game', 'pendidikan', 'framework', 'laptop', 'handphone']
+    > &
       Attribute.Required;
     tanggal: Attribute.Date & Attribute.Required;
     content: Attribute.Blocks & Attribute.Required;
-    slider: Attribute.Media<'images', true> & Attribute.Required;
     slug: Attribute.String & Attribute.Required;
     avatar: Attribute.Media<'images'> & Attribute.Required;
     titleDetails: Attribute.String & Attribute.Required;
@@ -411,7 +412,6 @@ export interface ApiPortofolioPortofolio extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required;
-    desc: Attribute.Text & Attribute.Required;
     category: Attribute.Enumeration<['bisnis', 'education', 'wedding']> &
       Attribute.Required;
     tanggal: Attribute.Date & Attribute.Required;
